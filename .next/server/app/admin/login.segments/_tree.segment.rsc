@@ -1,0 +1,3 @@
+:HL["/_next/static/chunks/d9b5f48632feca56.css","style"]
+:HL["/_next/static/chunks/edbba75a86fe9bf1.css","style"]
+0:{"buildId":"FON-Np7fQRhl5nyeuQMxr","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"admin","paramType":null,"paramKey":"admin","hasRuntimePrefetch":false,"slots":{"children":{"name":"login","paramType":null,"paramKey":"login","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":true},"staleTime":300}

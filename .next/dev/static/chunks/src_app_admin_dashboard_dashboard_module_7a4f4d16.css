@@ -1,0 +1,185 @@
+/* [project]/src/app/admin/dashboard/dashboard.module.css [app-client] (css) */
+.dashboard-module__dgeMKW__layout {
+  background-color: #f8fafc;
+  min-height: 100vh;
+  display: flex;
+}
+
+.dashboard-module__dgeMKW__sidebar {
+  background-color: var(--primary-deep-blue);
+  width: 260px;
+  color: var(--white);
+  z-index: 1000;
+  flex-direction: column;
+  transition: transform .3s;
+  display: flex;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.dashboard-module__dgeMKW__sidebarHeader {
+  border-bottom: 1px solid #ffffff1a;
+  padding: 2rem 1.5rem;
+}
+
+.dashboard-module__dgeMKW__headerTitleRow {
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+}
+
+.dashboard-module__dgeMKW__sidebarHeader h3 {
+  color: var(--accent-sandy-gold);
+}
+
+.dashboard-module__dgeMKW__mobileCloseBtn {
+  color: var(--white);
+  cursor: pointer;
+  background: none;
+  border: none;
+  display: none;
+}
+
+.dashboard-module__dgeMKW__nav {
+  flex: 1;
+  padding: 1.5rem 0;
+}
+
+.dashboard-module__dgeMKW__navItem {
+  color: #fffc;
+  transition: var(--transition-fast);
+  align-items: center;
+  gap: 12px;
+  padding: .8rem 1.5rem;
+  display: flex;
+}
+
+.dashboard-module__dgeMKW__navItem:hover, .dashboard-module__dgeMKW__active {
+  color: var(--white);
+  background-color: #ffffff1a;
+}
+
+.dashboard-module__dgeMKW__active {
+  border-left: 4px solid var(--accent-sandy-gold);
+}
+
+.dashboard-module__dgeMKW__logoutBtn {
+  color: #fb7185;
+  text-align: left;
+  border-top: 1px solid #ffffff1a;
+  align-items: center;
+  gap: 12px;
+  width: calc(100% - 3rem);
+  margin: 1.5rem;
+  padding: .8rem;
+  display: flex;
+}
+
+.dashboard-module__dgeMKW__content {
+  flex-direction: column;
+  flex: 1;
+  width: calc(100% - 260px);
+  margin-left: 260px;
+  display: flex;
+}
+
+.dashboard-module__dgeMKW__topBar {
+  background-color: var(--white);
+  z-index: 500;
+  border-bottom: 1px solid #e2e8f0;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  display: flex;
+  position: sticky;
+  top: 0;
+}
+
+.dashboard-module__dgeMKW__topBarLeft {
+  align-items: center;
+  gap: 15px;
+  display: flex;
+}
+
+.dashboard-module__dgeMKW__hamburgerBtn {
+  color: var(--primary-deep-blue);
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 5px;
+  display: none;
+}
+
+.dashboard-module__dgeMKW__topBar h2 {
+  color: var(--primary-deep-blue);
+  font-size: 1.25rem;
+}
+
+.dashboard-module__dgeMKW__adminProfile {
+  color: var(--text-muted);
+  font-size: .9rem;
+}
+
+.dashboard-module__dgeMKW__mainArea {
+  padding: 2rem;
+  overflow-y: auto;
+}
+
+.dashboard-module__dgeMKW__overlay {
+  z-index: 900;
+  background: #00000080;
+  position: fixed;
+  inset: 0;
+}
+
+@media (max-width: 1024px) {
+  .dashboard-module__dgeMKW__sidebar {
+    width: 80px;
+  }
+
+  .dashboard-module__dgeMKW__sidebar h3, .dashboard-module__dgeMKW__navItem span, .dashboard-module__dgeMKW__logoutBtn span, .dashboard-module__dgeMKW__sidebarHeader span {
+    display: none;
+  }
+
+  .dashboard-module__dgeMKW__content {
+    width: calc(100% - 80px);
+    margin-left: 80px;
+  }
+
+  .dashboard-module__dgeMKW__navItem, .dashboard-module__dgeMKW__logoutBtn {
+    justify-content: center;
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard-module__dgeMKW__sidebar {
+    width: 260px;
+    transform: translateX(-100%);
+  }
+
+  .dashboard-module__dgeMKW__sidebarOpen {
+    transform: translateX(0);
+  }
+
+  .dashboard-module__dgeMKW__sidebar h3, .dashboard-module__dgeMKW__navItem span, .dashboard-module__dgeMKW__logoutBtn span, .dashboard-module__dgeMKW__sidebarHeader span, .dashboard-module__dgeMKW__mobileCloseBtn {
+    display: block;
+  }
+
+  .dashboard-module__dgeMKW__content {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .dashboard-module__dgeMKW__hamburgerBtn {
+    display: block;
+  }
+
+  .dashboard-module__dgeMKW__topBar, .dashboard-module__dgeMKW__mainArea {
+    padding: 1rem;
+  }
+}
+
+/*# sourceMappingURL=src_app_admin_dashboard_dashboard_module_7a4f4d16.css.map*/

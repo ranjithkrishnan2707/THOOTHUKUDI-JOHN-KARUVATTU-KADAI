@@ -1,0 +1,114 @@
+/* [project]/src/app/(user)/combo-offers/page.module.css [app-client] (css) */
+.page-module__mMtdpq__main {
+  padding: var(--spacing-xl) 0;
+  min-height: 80vh;
+}
+
+.page-module__mMtdpq__title {
+  color: var(--primary-deep-blue);
+  margin-bottom: var(--spacing-md);
+  text-align: center;
+  font-size: 2.5rem;
+}
+
+.page-module__mMtdpq__subtitle {
+  text-align: center;
+  color: var(--text-muted);
+  margin-bottom: var(--spacing-xl);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.page-module__mMtdpq__grid {
+  margin-top: var(--spacing-xl);
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+  display: grid;
+}
+
+.page-module__mMtdpq__card {
+  background: var(--white);
+  box-shadow: var(--shadow-md);
+  transition: var(--transition-normal);
+  border: 1px solid #0000000d;
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+}
+
+.page-module__mMtdpq__card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-5px);
+}
+
+.page-module__mMtdpq__badge {
+  background: var(--accent-sandy-gold);
+  color: var(--primary-deep-blue);
+  z-index: 10;
+  border-radius: 20px;
+  padding: 5px 12px;
+  font-size: .8rem;
+  font-weight: bold;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+
+.page-module__mMtdpq__image {
+  object-fit: cover;
+  width: 100%;
+  height: 200px;
+}
+
+.page-module__mMtdpq__content {
+  padding: 20px;
+}
+
+.page-module__mMtdpq__cardTitle {
+  color: var(--primary-deep-blue);
+  margin-bottom: 10px;
+  font-size: 1.25rem;
+}
+
+.page-module__mMtdpq__description {
+  color: var(--text-muted);
+  margin-bottom: 20px;
+  font-size: .9rem;
+  line-height: 1.5;
+}
+
+.page-module__mMtdpq__priceContainer {
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  display: flex;
+}
+
+.page-module__mMtdpq__finalPrice {
+  color: var(--secondary-sea-green);
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.page-module__mMtdpq__originalPrice {
+  color: var(--text-muted);
+  font-size: 1rem;
+  text-decoration: line-through;
+}
+
+.page-module__mMtdpq__orderButton {
+  background: var(--primary-deep-blue);
+  width: 100%;
+  color: var(--white);
+  transition: var(--transition-fast);
+  border-radius: 8px;
+  padding: 12px;
+  font-weight: bold;
+}
+
+.page-module__mMtdpq__orderButton:hover {
+  background: var(--secondary-sea-green);
+}
+
+/*# sourceMappingURL=src_app_%28user%29_combo-offers_page_module_css_bad6b30c._.single.css.map*/

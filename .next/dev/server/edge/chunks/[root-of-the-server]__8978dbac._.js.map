@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 16, "column": 0}, "map": {"version":3,"sources":["turbopack:///[project]/src/middleware.ts"],"sourcesContent":["import { NextResponse } from 'next/server';\r\n\r\nexport function middleware() {\r\n    // Add security headers\r\n    const response = NextResponse.next();\r\n\r\n    response.headers.set('X-Frame-Options', 'DENY');\r\n    response.headers.set('X-Content-Type-Options', 'nosniff');\r\n    response.headers.set('Referrer-Policy', 'strict-origin-when-cross-origin');\r\n    response.headers.set(\r\n        'Content-Security-Policy',\r\n        \"default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self';\"\r\n    );\r\n\r\n    return response;\r\n}\r\n\r\nexport const config = {\r\n    matcher: '/:path*',\r\n};\r\n"],"names":[],"mappings":";;;;;;AAAA;AAAA;;AAEO,SAAS;IACZ,uBAAuB;IACvB,MAAM,WAAW,gMAAY,CAAC,IAAI;IAElC,SAAS,OAAO,CAAC,GAAG,CAAC,mBAAmB;IACxC,SAAS,OAAO,CAAC,GAAG,CAAC,0BAA0B;IAC/C,SAAS,OAAO,CAAC,GAAG,CAAC,mBAAmB;IACxC,SAAS,OAAO,CAAC,GAAG,CAChB,2BACA;IAGJ,OAAO;AACX;AAEO,MAAM,SAAS;IAClB,SAAS;AACb"}}]
+}

@@ -1,0 +1,204 @@
+/* [project]/src/app/admin/dashboard/access/access.module.css [app-client] (css) */
+.access-module__fAaSMq__container {
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+.access-module__fAaSMq__header {
+  color: #fff;
+  background: linear-gradient(135deg, #6b46c1 0%, #4834d4 100%);
+  border-radius: 16px;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding: 2.5rem;
+  display: flex;
+  box-shadow: 0 10px 25px #6b46c133;
+}
+
+.access-module__fAaSMq__headerTitle h1 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.access-module__fAaSMq__headerTitle p {
+  opacity: .9;
+  margin-top: .5rem;
+}
+
+.access-module__fAaSMq__grid {
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  display: grid;
+}
+
+@media (max-width: 1024px) {
+  .access-module__fAaSMq__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.access-module__fAaSMq__card {
+  background: #fff;
+  border: 1px solid #f1f5f9;
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 4px 6px -1px #0000001a;
+}
+
+.access-module__fAaSMq__card h3 {
+  color: #1e293b;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 2rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  display: flex;
+}
+
+.access-module__fAaSMq__form {
+  flex-direction: column;
+  gap: 1.5rem;
+  display: flex;
+}
+
+.access-module__fAaSMq__field {
+  flex-direction: column;
+  gap: 8px;
+  display: flex;
+}
+
+.access-module__fAaSMq__field label {
+  color: #475569;
+  font-size: .9rem;
+  font-weight: 700;
+}
+
+.access-module__fAaSMq__field input {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 1rem;
+  font-size: 1rem;
+  transition: all .2s;
+}
+
+.access-module__fAaSMq__field input:focus {
+  background: #fff;
+  border-color: #6b46c1;
+  outline: none;
+  box-shadow: 0 0 0 4px #6b46c11a;
+}
+
+.access-module__fAaSMq__submitBtn {
+  color: #fff;
+  background: #6b46c1;
+  border-radius: 12px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 1rem;
+  font-size: 1rem;
+  font-weight: 700;
+  transition: all .3s;
+  display: flex;
+  box-shadow: 0 4px 12px #6b46c133;
+}
+
+.access-module__fAaSMq__submitBtn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px #6b46c14d;
+}
+
+.access-module__fAaSMq__submitBtn:disabled {
+  opacity: .6;
+  cursor: not-allowed;
+}
+
+.access-module__fAaSMq__backBtn {
+  color: #64748b;
+  text-align: center;
+  padding: .5rem;
+  font-weight: 600;
+}
+
+.access-module__fAaSMq__note {
+  color: #92400e;
+  background-color: #fffbeb;
+  border: 1px solid #fde68a;
+  border-radius: 12px;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 1rem;
+  font-size: .85rem;
+  line-height: 1.4;
+  display: flex;
+}
+
+.access-module__fAaSMq__tableContainer {
+  overflow-x: auto;
+}
+
+.access-module__fAaSMq__table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.access-module__fAaSMq__table th, .access-module__fAaSMq__table td {
+  text-align: left;
+  border-bottom: 1px solid #f1f5f9;
+  padding: 1.25rem 1rem;
+}
+
+.access-module__fAaSMq__table th {
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  font-size: .75rem;
+  font-weight: 700;
+}
+
+.access-module__fAaSMq__roleBadge {
+  color: #475569;
+  background-color: #f1f5f9;
+  border-radius: 50px;
+  padding: .4rem .8rem;
+  font-size: .75rem;
+  font-weight: 700;
+}
+
+.access-module__fAaSMq__statusActive {
+  color: #10b981;
+  align-items: center;
+  gap: 6px;
+  font-size: .85rem;
+  font-weight: 700;
+  display: flex;
+}
+
+.access-module__fAaSMq__spinner {
+  animation: 1s linear infinite access-module__fAaSMq__rotate;
+}
+
+@keyframes access-module__fAaSMq__rotate {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.access-module__fAaSMq__error {
+  color: #b91c1c;
+  background: #fef2f2;
+  border: 1px solid #fee2e2;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  font-weight: 600;
+}
+
+/*# sourceMappingURL=src_app_admin_dashboard_access_access_module_f616dd10.css.map*/

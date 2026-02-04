@@ -1,0 +1,119 @@
+.main {
+    padding: var(--spacing-xl) 0;
+    min-height: 80vh;
+}
+
+.title {
+    font-size: 2.5rem;
+    color: var(--primary-deep-blue);
+    text-align: center;
+    margin-bottom: var(--spacing-md);
+}
+
+.subtitle {
+    text-align: center;
+    color: var(--text-muted);
+    margin-bottom: var(--spacing-xl);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.contactInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.infoItem {
+    display: flex;
+    gap: 15px;
+    align-items: flex-start;
+}
+
+.icon {
+    color: var(--secondary-sea-green);
+    background: rgba(43, 122, 120, 0.1);
+    padding: 12px;
+    border-radius: 12px;
+}
+
+.infoText h3 {
+    font-size: 1.1rem;
+    color: var(--primary-deep-blue);
+    margin-bottom: 5px;
+}
+
+.infoText p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+.formCard {
+    background: var(--white);
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: var(--shadow-lg);
+}
+
+.formGroup {
+    margin-bottom: 20px;
+}
+
+.formGroup label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: var(--text-dark-navy);
+}
+
+.formGroup input,
+.formGroup textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: var(--transition-fast);
+}
+
+.formGroup input:focus,
+.formGroup textarea:focus {
+    outline: none;
+    border-color: var(--secondary-sea-green);
+    box-shadow: 0 0 0 3px rgba(43, 122, 120, 0.1);
+}
+
+.submitButton {
+    width: 100%;
+    background: var(--primary-deep-blue);
+    color: var(--white);
+    padding: 14px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: var(--transition-fast);
+    margin-top: 10px;
+}
+
+.submitButton:hover {
+    background: var(--secondary-sea-green);
+}
+
+@media (max-width: 992px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contactInfo {
+        order: 2;
+    }
+}

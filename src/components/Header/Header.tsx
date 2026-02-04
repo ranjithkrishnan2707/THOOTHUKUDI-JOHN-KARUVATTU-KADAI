@@ -1,0 +1,77 @@
+'use client';
+
+import React, { useState } from 'react';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { Globe, Menu, X } from 'lucide-react';
+import styles from './Header.module.css';
+
+const Header = () => {
+    const pathname = usePathname();
+    const [language, setLanguage] = useState<'EN' | 'TA'>('EN');
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+    const toggleLanguage = () => {
+        setLanguage(prev => prev === 'EN' ? 'TA' : 'EN');
+    };
+
+    const toggleMenu = () => {
+        setIsMenuOpen(!isMenuOpen);
+    };
+
+    const closeMenu = () => {
+        setIsMenuOpen(false);
+    };
+
+    const navLinks = [
+        { name: 'Home', path: '/' },
+        { name: 'Combo Offers', path: '/combo-offers' },
+        { name: 'About Us', path: '/about' },
+        { name: 'Contact', path: '/contact' },
+    ];
+
+    const tamilLinks: Record<string, string> = {
+        'Home': 'முகப்பு',
+        'Combo Offers': 'காம்போ சலுகைகள்',
+        'About Us': 'எங்களைப் பற்றி',
+        'Contact': 'தொடர்பு',
+    };
+
+    return (
+        <header className={styles.header}>
+            <div className={`container ${styles.headerFlex}`}>
+                <Link href="/" className={styles.logo}>
+                    THOOTHUKUDI <br /> <span>JOHN KARUVATTU KADAI</span>
+                </Link>
+
+                <nav className={`${styles.nav} ${isMenuOpen ? styles.navOpen : ''}`}>
+                    <button className={`${styles.menuButton} ${styles.closeButton}`} onClick={closeMenu}>
+                        <X size={24} />
+                    </button>
+                    {navLinks.map((link) => (
+                        <Link
+                            key={link.path}
+                            href={link.path}
+                            className={`${styles.navLink} ${pathname === link.path ? styles.navLinkActive : ''}`}
+                            onClick={closeMenu}
+                        >
+                            {language === 'EN' ? link.name : tamilLinks[link.name]}
+                        </Link>
+                    ))}
+                </nav>
+
+                <div className={styles.headerActions}>
+                    <button className={styles.langToggle} onClick={toggleLanguage}>
+                        <Globe size={18} />
+                        {language === 'EN' ? 'தமிழ்' : 'English'}
+                    </button>
+                    <button className={styles.menuButton} onClick={toggleMenu}>
+                        <Menu size={24} />
+                    </button>
+                </div>
+            </div>
+        </header>
+    );
+};
+
+export default Header;

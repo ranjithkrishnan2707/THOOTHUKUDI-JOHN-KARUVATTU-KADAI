@@ -1,0 +1,120 @@
+/* [project]/src/components/Header/Header.module.css [app-client] (css) */
+.Header-module__ldgnoG__header {
+  padding: var(--spacing-md) 0;
+  background-color: var(--primary-deep-blue);
+  color: var(--white);
+  z-index: 500;
+  box-shadow: var(--shadow-sm);
+  position: sticky;
+  top: 0;
+}
+
+.Header-module__ldgnoG__headerFlex {
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+}
+
+.Header-module__ldgnoG__logo {
+  color: var(--white);
+  font-size: 1.25rem;
+  line-height: 1.2;
+  text-decoration: none;
+}
+
+.Header-module__ldgnoG__logo span {
+  letter-spacing: 2px;
+  color: var(--accent-sandy-gold);
+  font-size: .8rem;
+}
+
+.Header-module__ldgnoG__nav {
+  align-items: center;
+  gap: 20px;
+  display: flex;
+}
+
+.Header-module__ldgnoG__navLink {
+  color: var(--white);
+  transition: var(--transition-fast);
+  opacity: .8;
+  font-size: .95rem;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.Header-module__ldgnoG__navLink:hover, .Header-module__ldgnoG__navLinkActive {
+  opacity: 1;
+  color: var(--accent-sandy-gold);
+}
+
+.Header-module__ldgnoG__headerActions {
+  align-items: center;
+  gap: 15px;
+  display: flex;
+}
+
+.Header-module__ldgnoG__langToggle, .Header-module__ldgnoG__adminLink {
+  color: var(--white);
+  transition: var(--transition-fast);
+  background: #ffffff1a;
+  border: 1px solid #fff3;
+  border-radius: 20px;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  font-size: .9rem;
+  text-decoration: none;
+  display: flex;
+}
+
+.Header-module__ldgnoG__langToggle:hover, .Header-module__ldgnoG__adminLink:hover {
+  background: var(--accent-sandy-gold);
+  color: var(--primary-deep-blue);
+}
+
+@media (max-width: 992px) {
+  .Header-module__ldgnoG__nav {
+    background: var(--primary-deep-blue);
+    z-index: 1000;
+    flex-direction: column;
+    width: 70%;
+    height: 100vh;
+    padding: 80px 40px;
+    transition: all .3s;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    box-shadow: -5px 0 15px #0000004d;
+  }
+
+  .Header-module__ldgnoG__navOpen {
+    right: 0;
+  }
+
+  .Header-module__ldgnoG__menuButton {
+    color: var(--white);
+    z-index: 1100;
+    background: #ffffff1a;
+    border-radius: 8px;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+    display: flex;
+  }
+
+  .Header-module__ldgnoG__closeButton {
+    color: var(--white);
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+}
+
+@media (min-width: 993px) {
+  .Header-module__ldgnoG__menuButton {
+    display: none;
+  }
+}
+
+/*# sourceMappingURL=src_components_Header_Header_module_css_bad6b30c._.single.css.map*/

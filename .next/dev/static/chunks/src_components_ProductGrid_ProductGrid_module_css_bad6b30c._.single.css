@@ -1,0 +1,16 @@
+/* [project]/src/components/ProductGrid/ProductGrid.module.css [app-client] (css) */
+.ProductGrid-module__I0z52G__grid {
+  gap: var(--spacing-lg);
+  padding: var(--spacing-lg) 0;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  display: grid;
+}
+
+@media (max-width: 600px) {
+  .ProductGrid-module__I0z52G__grid {
+    gap: var(--spacing-sm);
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  }
+}
+
+/*# sourceMappingURL=src_components_ProductGrid_ProductGrid_module_css_bad6b30c._.single.css.map*/

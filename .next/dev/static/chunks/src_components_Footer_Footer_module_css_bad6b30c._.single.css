@@ -1,0 +1,27 @@
+/* [project]/src/components/Footer/Footer.module.css [app-client] (css) */
+.Footer-module__Grjkva__footer {
+  background-color: var(--primary-deep-blue);
+  color: var(--white);
+  padding: var(--spacing-xl) 0;
+  text-align: center;
+  border-top: 1px solid #ffffff1a;
+}
+
+.Footer-module__Grjkva__footerContent {
+  flex-direction: column;
+  gap: 10px;
+  display: flex;
+}
+
+.Footer-module__Grjkva__footer p {
+  opacity: .8;
+  margin: 0;
+  font-size: .9rem;
+}
+
+.Footer-module__Grjkva__copyright {
+  margin-top: 10px;
+  font-weight: 500;
+}
+
+/*# sourceMappingURL=src_components_Footer_Footer_module_css_bad6b30c._.single.css.map*/

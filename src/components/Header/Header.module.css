@@ -1,0 +1,120 @@
+.header {
+    padding: var(--spacing-md) 0;
+    background-color: var(--primary-deep-blue);
+    color: var(--white);
+    position: sticky;
+    top: 0;
+    z-index: 500;
+    box-shadow: var(--shadow-sm);
+}
+
+.headerFlex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.25rem;
+    line-height: 1.2;
+    text-decoration: none;
+    color: var(--white);
+}
+
+.logo span {
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    color: var(--accent-sandy-gold);
+}
+
+.nav {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.navLink {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: var(--transition-fast);
+    opacity: 0.8;
+}
+
+.navLink:hover,
+.navLinkActive {
+    opacity: 1;
+    color: var(--accent-sandy-gold);
+}
+
+.headerActions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.langToggle,
+.adminLink {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--white);
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: var(--transition-fast);
+    text-decoration: none;
+}
+
+.langToggle:hover,
+.adminLink:hover {
+    background: var(--accent-sandy-gold);
+    color: var(--primary-deep-blue);
+}
+
+@media (max-width: 992px) {
+    .nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        height: 100vh;
+        background: var(--primary-deep-blue);
+        flex-direction: column;
+        padding: 80px 40px;
+        transition: 0.3s ease;
+        z-index: 1000;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .navOpen {
+        right: 0;
+    }
+
+    .menuButton {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--white);
+        z-index: 1100;
+        padding: 8px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 8px;
+    }
+
+    .closeButton {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        color: var(--white);
+    }
+}
+
+@media (min-width: 993px) {
+    .menuButton {
+        display: none;
+    }
+}

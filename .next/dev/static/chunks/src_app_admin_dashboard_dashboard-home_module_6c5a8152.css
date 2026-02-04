@@ -1,0 +1,114 @@
+/* [project]/src/app/admin/dashboard/dashboard-home.module.css [app-client] (css) */
+.dashboard-home-module__VQzdHa__container {
+  flex-direction: column;
+  gap: 2rem;
+  display: flex;
+}
+
+.dashboard-home-module__VQzdHa__statsGrid {
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.25rem;
+  display: grid;
+}
+
+.dashboard-home-module__VQzdHa__statCard {
+  background-color: var(--white);
+  box-shadow: var(--shadow-sm);
+  border-radius: 12px;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1.5rem;
+  display: flex;
+}
+
+.dashboard-home-module__VQzdHa__icon {
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+  width: 48px;
+  height: 48px;
+  display: flex;
+}
+
+.dashboard-home-module__VQzdHa__blue {
+  color: #3b82f6;
+  background-color: #eff6ff;
+}
+
+.dashboard-home-module__VQzdHa__green {
+  color: #22c55e;
+  background-color: #f0fdf4;
+}
+
+.dashboard-home-module__VQzdHa__orange {
+  color: #f97316;
+  background-color: #fff7ed;
+}
+
+.dashboard-home-module__VQzdHa__purple {
+  color: #a855f7;
+  background-color: #faf5ff;
+}
+
+.dashboard-home-module__VQzdHa__statInfo p {
+  color: var(--text-muted);
+  margin-bottom: 4px;
+  font-size: .875rem;
+}
+
+.dashboard-home-module__VQzdHa__statInfo h3 {
+  color: var(--text-dark-navy);
+  font-size: 1.5rem;
+}
+
+.dashboard-home-module__VQzdHa__chartsGrid {
+  grid-template-columns: 2fr 1fr;
+  gap: 1.5rem;
+  display: grid;
+}
+
+.dashboard-home-module__VQzdHa__chartCard {
+  background-color: var(--white);
+  box-shadow: var(--shadow-sm);
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+.dashboard-home-module__VQzdHa__chartCard h4 {
+  color: var(--primary-deep-blue);
+  margin-bottom: 1.5rem;
+}
+
+.dashboard-home-module__VQzdHa__placeholderChart {
+  color: #94a3b8;
+  border: 2px dashed #f1f5f9;
+  border-radius: 8px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 250px;
+  display: flex;
+}
+
+.dashboard-home-module__VQzdHa__topList {
+  flex-direction: column;
+  gap: 12px;
+  display: flex;
+}
+
+.dashboard-home-module__VQzdHa__topList li {
+  background-color: #f8fafc;
+  border-radius: 6px;
+  justify-content: space-between;
+  padding: 12px;
+  font-size: .95rem;
+  display: flex;
+}
+
+@media (max-width: 1024px) {
+  .dashboard-home-module__VQzdHa__chartsGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/*# sourceMappingURL=src_app_admin_dashboard_dashboard-home_module_6c5a8152.css.map*/

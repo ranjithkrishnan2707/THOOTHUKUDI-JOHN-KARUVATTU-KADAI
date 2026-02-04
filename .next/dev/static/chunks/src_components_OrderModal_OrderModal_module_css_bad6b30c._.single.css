@@ -1,0 +1,125 @@
+/* [project]/src/components/OrderModal/OrderModal.module.css [app-client] (css) */
+.OrderModal-module__YB5KYa__overlay {
+  z-index: 1000;
+  width: 100%;
+  height: 100%;
+  padding: var(--spacing-md);
+  background-color: #0009;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.OrderModal-module__YB5KYa__modal {
+  background-color: var(--white);
+  padding: var(--spacing-xl);
+  width: 100%;
+  max-width: 500px;
+  box-shadow: var(--shadow-lg);
+  border-radius: 12px;
+  position: relative;
+}
+
+.OrderModal-module__YB5KYa__closeButton {
+  color: var(--text-muted);
+  transition: var(--transition-fast);
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+
+.OrderModal-module__YB5KYa__closeButton:hover {
+  color: var(--primary-deep-blue);
+}
+
+.OrderModal-module__YB5KYa__title {
+  color: var(--primary-deep-blue);
+  margin-bottom: var(--spacing-lg);
+  text-align: center;
+}
+
+.OrderModal-module__YB5KYa__productInfo {
+  background-color: var(--background-sea-mist);
+  padding: var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
+  border-left: 4px solid var(--secondary-sea-green);
+  border-radius: 8px;
+}
+
+.OrderModal-module__YB5KYa__productInfo p {
+  margin-bottom: 4px;
+}
+
+.OrderModal-module__YB5KYa__form {
+  gap: var(--spacing-md);
+  flex-direction: column;
+  display: flex;
+}
+
+.OrderModal-module__YB5KYa__field {
+  flex-direction: column;
+  gap: 4px;
+  display: flex;
+}
+
+.OrderModal-module__YB5KYa__field label {
+  color: var(--text-dark-navy);
+  font-size: .9rem;
+  font-weight: 600;
+}
+
+.OrderModal-module__YB5KYa__field input, .OrderModal-module__YB5KYa__field textarea {
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  padding: 10px;
+  font-size: 1rem;
+}
+
+.OrderModal-module__YB5KYa__field input:focus, .OrderModal-module__YB5KYa__field textarea:focus {
+  border-color: var(--secondary-sea-green);
+  outline: none;
+  box-shadow: 0 0 0 2px #2b7a7833;
+}
+
+.OrderModal-module__YB5KYa__totalPrice {
+  margin-top: var(--spacing-sm);
+  text-align: right;
+  color: var(--primary-deep-blue);
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.OrderModal-module__YB5KYa__totalPrice span {
+  color: var(--secondary-sea-green);
+  font-size: 1.3rem;
+}
+
+.OrderModal-module__YB5KYa__submitButton {
+  background-color: var(--secondary-sea-green);
+  color: var(--white);
+  margin-top: var(--spacing-md);
+  transition: var(--transition-normal);
+  border-radius: 4px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  display: flex;
+}
+
+.OrderModal-module__YB5KYa__submitButton:hover {
+  background-color: var(--primary-deep-blue);
+}
+
+@media (max-width: 480px) {
+  .OrderModal-module__YB5KYa__modal {
+    padding: var(--spacing-lg);
+  }
+}
+
+/*# sourceMappingURL=src_components_OrderModal_OrderModal_module_css_bad6b30c._.single.css.map*/
