@@ -35,13 +35,26 @@ export async function POST(request: NextRequest) {
 
         // Send Email
         const emailSent = await sendOTPEmail(email, otp);
+
         if (!emailSent) {
-            return NextResponse.json({ success: false, error: 'Failed to send OTP email' }, { status: 500 });
+            console.log('\n=========================================');
+            console.log('🔑 DEBUG OTP for:', email);
+            console.log('👉 CODE:', otp);
+            console.log('=========================================\n');
+
+            return NextResponse.json({
+                success: true,
+                debugOtp: otp, // Bypass for demo/dev purposes
+                message: 'Demo Mode: OTP logged to terminal since email failed.'
+            });
         }
 
         return NextResponse.json({ success: true, message: 'OTP sent successfully' });
     } catch (error: any) {
-        console.error('OTP Request Error:', error);
-        return NextResponse.json({ success: false, error: error.message || 'Internal server error' }, { status: 500 });
+        console.error('CRITICAL OTP ROUTE ERROR:', error);
+        return NextResponse.json({
+            success: false,
+            error: error.message || 'Internal server error'
+        }, { status: 500 });
     }
 }

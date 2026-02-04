@@ -65,16 +65,45 @@
     border-left: 4px solid var(--accent-sandy-gold);
 }
 
+.sidebarFooter {
+    padding: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
 .logoutBtn {
-    margin: 1.5rem;
-    padding: 0.8rem;
     display: flex;
     align-items: center;
     gap: 12px;
+    padding: 0.8rem;
     color: #fb7185;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    width: calc(100% - 3rem);
-    text-align: left;
+    background: none;
+    border: none;
+    width: 100%;
+    cursor: pointer;
+    transition: var(--transition-fast);
+    border-radius: 8px;
+}
+
+.logoutBtn:hover {
+    background: rgba(251, 113, 133, 0.1);
+}
+
+.viewSiteBtn {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0.8rem;
+    color: rgba(255, 255, 255, 0.8);
+    transition: var(--transition-fast);
+    border-radius: 8px;
+}
+
+.viewSiteBtn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
 }
 
 .content {

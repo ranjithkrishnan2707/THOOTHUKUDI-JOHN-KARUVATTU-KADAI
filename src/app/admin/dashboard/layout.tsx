@@ -3,7 +3,7 @@
 import React from 'react';
 import styles from './dashboard.module.css';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import {
     LayoutDashboard,
     Package,
@@ -12,7 +12,8 @@ import {
     Menu,
     X,
     Users,
-    Layers
+    Layers,
+    LogOut
 } from 'lucide-react';
 
 export default function AdminLayout({
@@ -21,7 +22,33 @@ export default function AdminLayout({
     children: React.ReactNode;
 }) {
     const pathname = usePathname();
+    const router = useRouter();
     const [isSidebarOpen, setIsSidebarOpen] = React.useState(false);
+    const [isAuthLoading, setIsAuthLoading] = React.useState(true);
+
+    React.useEffect(() => {
+        const session = localStorage.getItem('jk_admin_session');
+        if (!session) {
+            router.push('/admin/login');
+            return;
+        }
+
+        const parsed = JSON.parse(session);
+        if (Date.now() > parsed.expiry) {
+            localStorage.removeItem('jk_admin_session');
+            router.push('/admin/login');
+            return;
+        }
+
+        setIsAuthLoading(false);
+    }, [router]);
+
+    const handleLogout = () => {
+        if (confirm('Are you sure you want to logout?')) {
+            localStorage.removeItem('jk_admin_session');
+            router.push('/admin/login');
+        }
+    };
 
     const menuItems = [
         { name: 'Dashboard', href: '/admin/dashboard', icon: LayoutDashboard },
@@ -33,6 +60,14 @@ export default function AdminLayout({
 
     const toggleSidebar = () => setIsSidebarOpen(!isSidebarOpen);
     const closeSidebar = () => setIsSidebarOpen(false);
+
+    if (isAuthLoading) {
+        return (
+            <div style={{ background: '#0f172a', height: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white' }}>
+                <p>Checking authorization...</p>
+            </div>
+        );
+    }
 
     return (
         <div className={styles.layout}>
@@ -68,10 +103,16 @@ export default function AdminLayout({
                         );
                     })}
                 </nav>
-                <Link href="/" className={styles.logoutBtn}>
-                    <Home size={20} />
-                    <span>View Site</span>
-                </Link>
+                <div className={styles.sidebarFooter}>
+                    <button className={styles.logoutBtn} onClick={handleLogout}>
+                        <LogOut size={20} />
+                        <span>Logout</span>
+                    </button>
+                    <Link href="/" className={styles.viewSiteBtn}>
+                        <Home size={20} />
+                        <span>View Site</span>
+                    </Link>
+                </div>
             </aside>
             <main className={styles.content}>
                 <header className={styles.topBar}>
