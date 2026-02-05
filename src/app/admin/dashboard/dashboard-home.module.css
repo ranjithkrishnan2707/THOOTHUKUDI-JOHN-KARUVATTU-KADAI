@@ -109,3 +109,57 @@
         grid-template-columns: 1fr;
     }
 }
+
+.statusSection {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+}
+
+.statusCard {
+    background-color: var(--white);
+    padding: 1.25rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.statusLabel {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 500;
+    color: var(--text-dark-navy);
+}
+
+.statusDot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.pendingDot {
+    background-color: #f59e0b;
+}
+
+.shippedDot {
+    background-color: #3b82f6;
+}
+
+.deliveredDot {
+    background-color: #10b981;
+}
+
+.statusValue {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--primary-deep-blue);
+}
+
+@media (max-width: 640px) {
+    .statusSection {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,5 +1,97 @@
-[00:00:01.645] Server  WARN    ⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
-[00:00:01.932] Server  LOG     ✓ Ready in 1279ms
-[00:01:16.953] Server  WARN    ⚠ metadataBase property in metadata export is not set for resolving social open graph or twitter images, using "http://localhost:3000". See https://nextjs.org/docs/app/api-reference/functions/generate-metadata#metadatabase
-[00:01:17.583] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:01:24.750] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:02.241] Server  WARN    ⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+[00:00:02.573] Server  LOG     ✓ Ready in 1813ms
+[00:00:12.288] Server  ERROR   ⨯ ./src/components/Footer/Footer.tsx:3:10
+Ecmascript file had an error
+  1 | import React from 'react';
+  2 | import styles from './Footer.module.css';
+> 3 | import { usePathname } from 'next/navigation';
+    |          ^^^^^^^^^^^
+  4 |
+  5 | const Footer = () => {
+  6 |     const pathname = usePathname();
+
+You're importing a component that needs `usePathname`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+
+
+Import trace:
+  Server Component:
+    ./src/components/Footer/Footer.tsx
+    ./src/app/(user)/layout.tsx
+
+
+[00:00:14.896] Browser ERROR   uncaughtError: Error: ./src/components/Footer/Footer.tsx:3:10
+Ecmascript file had an error
+  1 | import React from 'react';
+  2 | import styles from './Footer.module.css';
+> 3 | import { usePathname } from 'next/navigation';
+    |          ^^^^^^^^^^^
+  4 |
+  5 | const Footer = () => {
+  6 |     const pathname = usePathname();
+
+You're importing a component that needs `usePathname`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+
+
+Import trace:
+  Server Component:
+    ./src/components/Footer/Footer.tsx
+    ./src/app/(user)/layout.tsx
+
+
+[00:00:15.114] Browser ERROR   ./src/components/Footer/Footer.tsx:3:10
+Ecmascript file had an error
+  1 | import React from 'react';
+  2 | import styles from './Footer.module.css';
+> 3 | import { usePathname } from 'next/navigation';
+    |          ^^^^^^^^^^^
+  4 |
+  5 | const Footer = () => {
+  6 |     const pathname = usePathname();
+
+You're importing a component that needs `usePathname`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./src/components/Footer/Footer.tsx
+    ./src/app/(user)/layout.tsx
+[00:00:15.880] Browser ERROR   ./src/components/Footer/Footer.tsx:3:10
+Ecmascript file had an error
+  1 | import React from 'react';
+  2 | import styles from './Footer.module.css';
+> 3 | import { usePathname } from 'next/navigation';
+    |          ^^^^^^^^^^^
+  4 |
+  5 | const Footer = () => {
+  6 |     const pathname = usePathname();
+
+You're importing a component that needs `usePathname`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./src/components/Footer/Footer.tsx
+    ./src/app/(user)/layout.tsx
+[00:00:42.340] Server  LOG     ✓ Compiled in 416ms
+[00:00:42.796] Server  WARN    ⚠ metadataBase property in metadata export is not set for resolving social open graph or twitter images, using "http://localhost:3000". See https://nextjs.org/docs/app/api-reference/functions/generate-metadata#metadatabase
+[00:00:43.522] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:01:47.428] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:04:52.307] Server  LOG     ✓ Compiled in 273ms
+[00:04:52.536] Server  WARN    ⚠ metadataBase property in metadata export is not set for resolving social open graph or twitter images, using "http://localhost:3000". See https://nextjs.org/docs/app/api-reference/functions/generate-metadata#metadatabase
+[00:04:53.223] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:22:02.149] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:22:19.828] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:23:42.671] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:24:11.864] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:25:31.997] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:15:19.774] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:16:08.230] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:18:06.172] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold

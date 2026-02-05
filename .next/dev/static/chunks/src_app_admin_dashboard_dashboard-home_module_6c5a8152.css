@@ -111,4 +111,58 @@
   }
 }
 
+.dashboard-home-module__VQzdHa__statusSection {
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  display: grid;
+}
+
+.dashboard-home-module__VQzdHa__statusCard {
+  background-color: var(--white);
+  box-shadow: var(--shadow-sm);
+  border-radius: 12px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem;
+  display: flex;
+}
+
+.dashboard-home-module__VQzdHa__statusLabel {
+  color: var(--text-dark-navy);
+  align-items: center;
+  gap: 10px;
+  font-weight: 500;
+  display: flex;
+}
+
+.dashboard-home-module__VQzdHa__statusDot {
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+}
+
+.dashboard-home-module__VQzdHa__pendingDot {
+  background-color: #f59e0b;
+}
+
+.dashboard-home-module__VQzdHa__shippedDot {
+  background-color: #3b82f6;
+}
+
+.dashboard-home-module__VQzdHa__deliveredDot {
+  background-color: #10b981;
+}
+
+.dashboard-home-module__VQzdHa__statusValue {
+  color: var(--primary-deep-blue);
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+@media (max-width: 640px) {
+  .dashboard-home-module__VQzdHa__statusSection {
+    grid-template-columns: 1fr;
+  }
+}
+
 /*# sourceMappingURL=src_app_admin_dashboard_dashboard-home_module_6c5a8152.css.map*/

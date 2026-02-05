@@ -1,0 +1,252 @@
+/* [project]/src/app/(user)/track/track.module.css [app-client] (css) */
+.track-module__jFdQrW__container {
+  background: linear-gradient(135deg, #f6f8fb 0%, #e9eff6 100%);
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  padding: 4rem 1rem;
+  display: flex;
+}
+
+.track-module__jFdQrW__card {
+  background: #fff;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 600px;
+  padding: 2.5rem;
+  box-shadow: 0 10px 25px #0000000d;
+}
+
+.track-module__jFdQrW__title {
+  color: #1a202c;
+  text-align: center;
+  margin-bottom: .5rem;
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.track-module__jFdQrW__subtitle {
+  color: #4a5568;
+  text-align: center;
+  margin-bottom: 2.5rem;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.track-module__jFdQrW__searchForm {
+  gap: 12px;
+  margin-bottom: 1.5rem;
+  display: flex;
+}
+
+.track-module__jFdQrW__inputWrapper {
+  flex: 1;
+  position: relative;
+}
+
+.track-module__jFdQrW__searchIcon {
+  color: #a0aec0;
+  position: absolute;
+  top: 50%;
+  left: 14px;
+  transform: translateY(-50%);
+}
+
+.track-module__jFdQrW__input {
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  outline: none;
+  width: 100%;
+  padding: 14px 14px 14px 44px;
+  font-size: 1rem;
+  transition: all .2s;
+}
+
+.track-module__jFdQrW__input:focus {
+  border-color: #6b46c1;
+  box-shadow: 0 0 0 3px #6b46c11a;
+}
+
+.track-module__jFdQrW__trackBtn {
+  color: #fff;
+  cursor: pointer;
+  background: #6b46c1;
+  border: none;
+  border-radius: 12px;
+  padding: 0 24px;
+  font-weight: 600;
+  transition: background .2s;
+}
+
+.track-module__jFdQrW__trackBtn:hover {
+  background: #553c9a;
+}
+
+.track-module__jFdQrW__error {
+  color: #c53030;
+  text-align: center;
+  background: #fff5f5;
+  border: 1px solid #feb2b2;
+  border-radius: 8px;
+  margin-top: 1rem;
+  padding: 12px;
+  font-size: .9rem;
+}
+
+.track-module__jFdQrW__result {
+  border-top: 2px dashed #edf2f7;
+  margin-top: 2.5rem;
+  padding-top: 2.5rem;
+}
+
+.track-module__jFdQrW__orderHeader {
+  justify-content: space-between;
+  margin-bottom: 2.5rem;
+  display: flex;
+}
+
+.track-module__jFdQrW__label {
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  color: #718096;
+  margin-bottom: 4px;
+  font-size: .75rem;
+  display: block;
+}
+
+.track-module__jFdQrW__val {
+  color: #1a202c;
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+
+.track-module__jFdQrW__stepper {
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3rem;
+  display: flex;
+}
+
+.track-module__jFdQrW__step {
+  color: #a0aec0;
+  z-index: 1;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  display: flex;
+  position: relative;
+}
+
+.track-module__jFdQrW__stepIcon {
+  background: #f7fafc;
+  border: 2px solid #e2e8f0;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  transition: all .3s;
+  display: flex;
+}
+
+.track-module__jFdQrW__step span {
+  font-size: .8rem;
+  font-weight: 600;
+}
+
+.track-module__jFdQrW__line {
+  background: #e2e8f0;
+  flex: 1;
+  height: 2px;
+  margin: -20px -10px 0;
+}
+
+.track-module__jFdQrW__active {
+  color: #6b46c1;
+}
+
+.track-module__jFdQrW__active .track-module__jFdQrW__stepIcon {
+  color: #fff;
+  background: #6b46c1;
+  border-color: #6b46c1;
+  box-shadow: 0 4px 12px #6b46c140;
+}
+
+.track-module__jFdQrW__orderInfo {
+  background: #f8fafc;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  padding: 1.5rem;
+}
+
+.track-module__jFdQrW__orderInfo h3 {
+  color: #2d3748;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+.track-module__jFdQrW__infoRow {
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-size: .95rem;
+  display: flex;
+}
+
+.track-module__jFdQrW__infoRow span {
+  color: #718096;
+}
+
+.track-module__jFdQrW__infoRow strong {
+  color: #1a202c;
+}
+
+.track-module__jFdQrW__infoRow p {
+  text-align: right;
+  color: #4a5568;
+  flex: 1;
+  margin-left: 20px;
+  font-size: .9rem;
+}
+
+.track-module__jFdQrW__statusBadge {
+  text-transform: uppercase;
+  letter-spacing: .025em;
+  border-radius: 12px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 14px;
+  font-weight: 700;
+  display: flex;
+}
+
+.track-module__jFdQrW__pending {
+  color: #b45309;
+  background: #fffbeb;
+}
+
+.track-module__jFdQrW__shipped {
+  color: #1d4ed8;
+  background: #eff6ff;
+}
+
+.track-module__jFdQrW__delivered {
+  color: #15803d;
+  background: #f0fdf4;
+}
+
+@media (max-width: 480px) {
+  .track-module__jFdQrW__searchForm {
+    flex-direction: column;
+  }
+
+  .track-module__jFdQrW__trackBtn {
+    padding: 14px;
+  }
+
+  .track-module__jFdQrW__card {
+    padding: 1.5rem;
+  }
+}
+
+/*# sourceMappingURL=src_app_%28user%29_track_track_module_1b5b587e.css.map*/

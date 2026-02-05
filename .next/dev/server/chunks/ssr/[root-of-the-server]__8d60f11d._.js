@@ -66,6 +66,10 @@ const Header = ()=>{
     const pathname = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["usePathname"])();
     const [language, setLanguage] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])('EN');
     const [isMenuOpen, setIsMenuOpen] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
+    // Don't render public header on admin pages to prevent overlap
+    if (pathname.startsWith('/admin')) {
+        return null;
+    }
     const toggleLanguage = ()=>{
         setLanguage((prev)=>prev === 'EN' ? 'TA' : 'EN');
     };
@@ -85,6 +89,10 @@ const Header = ()=>{
             path: '/combo-offers'
         },
         {
+            name: 'Track Order',
+            path: '/track'
+        },
+        {
             name: 'About Us',
             path: '/about'
         },
@@ -96,6 +104,7 @@ const Header = ()=>{
     const tamilLinks = {
         'Home': 'முகப்பு',
         'Combo Offers': 'காம்போ சலுகைகள்',
+        'Track Order': 'ஆர்டர் டிராக்கிங்',
         'About Us': 'எங்களைப் பற்றி',
         'Contact': 'தொடர்பு'
     };
@@ -111,7 +120,7 @@ const Header = ()=>{
                         "THOOTHUKUDI ",
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                             fileName: "[project]/src/components/Header/Header.tsx",
-                            lineNumber: 44,
+                            lineNumber: 51,
                             columnNumber: 33
                         }, ("TURBOPACK compile-time value", void 0)),
                         " ",
@@ -119,13 +128,13 @@ const Header = ()=>{
                             children: "JOHN KARUVATTU KADAI"
                         }, void 0, false, {
                             fileName: "[project]/src/components/Header/Header.tsx",
-                            lineNumber: 44,
+                            lineNumber: 51,
                             columnNumber: 40
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/Header/Header.tsx",
-                    lineNumber: 43,
+                    lineNumber: 50,
                     columnNumber: 17
                 }, ("TURBOPACK compile-time value", void 0)),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("nav", {
@@ -138,12 +147,12 @@ const Header = ()=>{
                                 size: 24
                             }, void 0, false, {
                                 fileName: "[project]/src/components/Header/Header.tsx",
-                                lineNumber: 49,
+                                lineNumber: 56,
                                 columnNumber: 25
                             }, ("TURBOPACK compile-time value", void 0))
                         }, void 0, false, {
                             fileName: "[project]/src/components/Header/Header.tsx",
-                            lineNumber: 48,
+                            lineNumber: 55,
                             columnNumber: 21
                         }, ("TURBOPACK compile-time value", void 0)),
                         navLinks.map((link)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -153,13 +162,13 @@ const Header = ()=>{
                                 children: language === 'EN' ? link.name : tamilLinks[link.name]
                             }, link.path, false, {
                                 fileName: "[project]/src/components/Header/Header.tsx",
-                                lineNumber: 52,
+                                lineNumber: 59,
                                 columnNumber: 25
                             }, ("TURBOPACK compile-time value", void 0)))
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/Header/Header.tsx",
-                    lineNumber: 47,
+                    lineNumber: 54,
                     columnNumber: 17
                 }, ("TURBOPACK compile-time value", void 0)),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -173,14 +182,14 @@ const Header = ()=>{
                                     size: 18
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/Header/Header.tsx",
-                                    lineNumber: 65,
+                                    lineNumber: 72,
                                     columnNumber: 25
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 language === 'EN' ? 'தமிழ்' : 'English'
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/Header/Header.tsx",
-                            lineNumber: 64,
+                            lineNumber: 71,
                             columnNumber: 21
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -190,29 +199,29 @@ const Header = ()=>{
                                 size: 24
                             }, void 0, false, {
                                 fileName: "[project]/src/components/Header/Header.tsx",
-                                lineNumber: 69,
+                                lineNumber: 76,
                                 columnNumber: 25
                             }, ("TURBOPACK compile-time value", void 0))
                         }, void 0, false, {
                             fileName: "[project]/src/components/Header/Header.tsx",
-                            lineNumber: 68,
+                            lineNumber: 75,
                             columnNumber: 21
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/Header/Header.tsx",
-                    lineNumber: 63,
+                    lineNumber: 70,
                     columnNumber: 17
                 }, ("TURBOPACK compile-time value", void 0))
             ]
         }, void 0, true, {
             fileName: "[project]/src/components/Header/Header.tsx",
-            lineNumber: 42,
+            lineNumber: 49,
             columnNumber: 13
         }, ("TURBOPACK compile-time value", void 0))
     }, void 0, false, {
         fileName: "[project]/src/components/Header/Header.tsx",
-        lineNumber: 41,
+        lineNumber: 48,
         columnNumber: 9
     }, ("TURBOPACK compile-time value", void 0));
 };

@@ -11,6 +11,11 @@ const Header = () => {
     const [language, setLanguage] = useState<'EN' | 'TA'>('EN');
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+    // Don't render public header on admin pages to prevent overlap
+    if (pathname.startsWith('/admin')) {
+        return null;
+    }
+
     const toggleLanguage = () => {
         setLanguage(prev => prev === 'EN' ? 'TA' : 'EN');
     };
@@ -25,14 +30,14 @@ const Header = () => {
 
     const navLinks = [
         { name: 'Home', path: '/' },
-        { name: 'Combo Offers', path: '/combo-offers' },
+        { name: 'Track Order', path: '/track' },
         { name: 'About Us', path: '/about' },
         { name: 'Contact', path: '/contact' },
     ];
 
     const tamilLinks: Record<string, string> = {
         'Home': 'முகப்பு',
-        'Combo Offers': 'காம்போ சலுகைகள்',
+        'Track Order': 'ஆர்டர் டிராக்கிங்',
         'About Us': 'எங்களைப் பற்றி',
         'Contact': 'தொடர்பு',
     };

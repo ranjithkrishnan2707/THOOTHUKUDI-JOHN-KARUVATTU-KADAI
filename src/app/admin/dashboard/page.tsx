@@ -17,6 +17,9 @@ export default function AdminDashboardHome() {
         totalRevenue: 0,
         totalCustomers: 0,
         activeProducts: 0,
+        pendingOrders: 0,
+        shippedOrders: 0,
+        deliveredOrders: 0,
         topSelling: [] as any[]
     });
 
@@ -38,6 +41,11 @@ export default function AdminDashboardHome() {
 
         const activeProducts = products.length;
 
+        // Calculate Status Counts
+        const pendingOrders = orders.filter((o: any) => o.status === 'PENDING').length;
+        const shippedOrders = orders.filter((o: any) => o.status === 'SHIPPED').length;
+        const deliveredOrders = orders.filter((o: any) => o.status === 'DELIVERED').length;
+
         // Simplified Top Selling (by count)
         const productCounts: Record<string, number> = {};
         orders.forEach((o: any) => {
@@ -55,6 +63,9 @@ export default function AdminDashboardHome() {
             totalRevenue,
             totalCustomers: customers,
             activeProducts,
+            pendingOrders,
+            shippedOrders,
+            deliveredOrders,
             topSelling
         });
     }, []);
@@ -97,6 +108,30 @@ export default function AdminDashboardHome() {
                         <p>Active Products</p>
                         <h3>{stats.activeProducts}</h3>
                     </div>
+                </div>
+            </div>
+
+            <div className={styles.statusSection}>
+                <div className={styles.statusCard}>
+                    <div className={styles.statusLabel}>
+                        <span className={`${styles.statusDot} ${styles.pendingDot}`}></span>
+                        Pending
+                    </div>
+                    <div className={styles.statusValue}>{stats.pendingOrders}</div>
+                </div>
+                <div className={styles.statusCard}>
+                    <div className={styles.statusLabel}>
+                        <span className={`${styles.statusDot} ${styles.shippedDot}`}></span>
+                        Shipped
+                    </div>
+                    <div className={styles.statusValue}>{stats.shippedOrders}</div>
+                </div>
+                <div className={styles.statusCard}>
+                    <div className={styles.statusLabel}>
+                        <span className={`${styles.statusDot} ${styles.deliveredDot}`}></span>
+                        Delivered
+                    </div>
+                    <div className={styles.statusValue}>{stats.deliveredOrders}</div>
                 </div>
             </div>
 
