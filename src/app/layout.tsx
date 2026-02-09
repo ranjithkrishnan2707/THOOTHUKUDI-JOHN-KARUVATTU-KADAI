@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import './globals.css';
+import { CartProvider } from '@/contexts/CartContext';
 
 export const metadata: Metadata = {
     title: 'THOOTHUKUDI JOHN KARUVATTU KADAI | Buy Fresh Dry Fish Online',
@@ -39,7 +40,9 @@ export default function RootLayout({
                 {/* Google Analytics Placeholder */}
             </head>
             <body>
-                <main>{children}</main>
+                <CartProvider>
+                    <main>{children}</main>
+                </CartProvider>
             </body>
         </html>
     );

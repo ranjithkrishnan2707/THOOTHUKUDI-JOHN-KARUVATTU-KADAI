@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './ProductCard.module.css';
-import { ShoppingCart } from 'lucide-react';
+import { ShoppingCart, ShoppingBag } from 'lucide-react';
+import { useCart } from '@/contexts/CartContext';
 
 interface ProductCardProps {
     name: string;
@@ -9,6 +10,7 @@ interface ProductCardProps {
     discountPercentage: number;
     finalPrice: number;
     onOrder: () => void;
+    product: any;
 }
 
 const ProductCard: React.FC<ProductCardProps> = ({
@@ -18,7 +20,17 @@ const ProductCard: React.FC<ProductCardProps> = ({
     discountPercentage,
     finalPrice,
     onOrder,
+    product,
 }) => {
+    const { addToCart } = useCart();
+    const [showToast, setShowToast] = useState(false);
+
+    const handleAddToCart = () => {
+        addToCart(product, 0.5);
+        setShowToast(true);
+        setTimeout(() => setShowToast(false), 2000);
+    };
+
     return (
         <div className={styles.card}>
             <div className={styles.imageContainer}>
@@ -35,11 +47,21 @@ const ProductCard: React.FC<ProductCardProps> = ({
                         <span className={styles.originalPrice}>₹{originalPrice}</span>
                     )}
                 </div>
-                <button className={styles.orderButton} onClick={onOrder}>
-                    <ShoppingCart size={18} />
-                    Order Now
-                </button>
+                <div className={styles.buttonGroup}>
+                    <button className={styles.addToCartButton} onClick={handleAddToCart}>
+                        <ShoppingCart size={18} />
+                    </button>
+                    <button className={styles.orderButton} onClick={onOrder}>
+                        <ShoppingBag size={18} />
+                        Order Now
+                    </button>
+                </div>
             </div>
+            {showToast && (
+                <div className={styles.toast}>
+                    Added to cart!
+                </div>
+            )}
         </div>
     );
 };

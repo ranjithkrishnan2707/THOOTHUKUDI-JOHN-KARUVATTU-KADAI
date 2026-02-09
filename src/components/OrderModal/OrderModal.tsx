@@ -19,7 +19,7 @@ interface OrderModalProps {
 
 const OrderModal: React.FC<OrderModalProps> = ({ product, isOpen, onClose, onSubmit }) => {
     const [formData, setFormData] = useState({
-        quantity: 1,
+        quantity: 0.5,
         customerName: '',
         mobileNumber: '',
         address: '',
@@ -55,7 +55,8 @@ const OrderModal: React.FC<OrderModalProps> = ({ product, isOpen, onClose, onSub
                             type="number"
                             id="quantity"
                             name="quantity"
-                            min="1"
+                            min="0.5"
+                            step="0.5"
                             value={formData.quantity}
                             onChange={handleChange}
                             required

@@ -1,13 +1,5 @@
 {
-  "/(user)/about/page": "app/(user)/about/page.js",
-  "/(user)/combo-offers/page": "app/(user)/combo-offers/page.js",
-  "/(user)/contact/page": "app/(user)/contact/page.js",
+  "/(user)/cart/page": "app/(user)/cart/page.js",
   "/(user)/page": "app/(user)/page.js",
-  "/(user)/track/page": "app/(user)/track/page.js",
-  "/admin/dashboard/access/page": "app/admin/dashboard/access/page.js",
-  "/admin/dashboard/combo-offers/page": "app/admin/dashboard/combo-offers/page.js",
-  "/admin/dashboard/orders/page": "app/admin/dashboard/orders/page.js",
-  "/admin/dashboard/page": "app/admin/dashboard/page.js",
-  "/admin/dashboard/products/page": "app/admin/dashboard/products/page.js",
-  "/admin/page": "app/admin/page.js"
+  "/(user)/track/page": "app/(user)/track/page.js"
 }

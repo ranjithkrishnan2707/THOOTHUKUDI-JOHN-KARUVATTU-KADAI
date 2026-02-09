@@ -3,13 +3,15 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Globe, Menu, X } from 'lucide-react';
+import { Globe, Menu, X, ShoppingCart } from 'lucide-react';
 import styles from './Header.module.css';
+import { useCart } from '@/contexts/CartContext';
 
 const Header = () => {
     const pathname = usePathname();
     const [language, setLanguage] = useState<'EN' | 'TA'>('EN');
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const { getCartCount } = useCart();
 
     // Don't render public header on admin pages to prevent overlap
     if (pathname.startsWith('/admin')) {
@@ -42,6 +44,8 @@ const Header = () => {
         'Contact': 'தொடர்பு',
     };
 
+    const cartCount = getCartCount();
+
     return (
         <header className={styles.header}>
             <div className={`container ${styles.headerFlex}`}>
@@ -66,6 +70,10 @@ const Header = () => {
                 </nav>
 
                 <div className={styles.headerActions}>
+                    <Link href="/cart" className={styles.cartButton}>
+                        <ShoppingCart size={20} />
+                        {cartCount > 0 && <span className={styles.cartBadge}>{cartCount}</span>}
+                    </Link>
                     <button className={styles.langToggle} onClick={toggleLanguage}>
                         <Globe size={18} />
                         {language === 'EN' ? 'தமிழ்' : 'English'}

@@ -25,6 +25,7 @@ const ProductGrid: React.FC<ProductGridProps> = ({ products, onOrder }) => {
                 <ProductCard
                     key={product.id}
                     {...product}
+                    product={product}
                     onOrder={() => onOrder(product)}
                 />
             ))}
