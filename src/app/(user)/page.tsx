@@ -117,8 +117,8 @@ Address: ${formData.address}`;
             </section>
 
             {/* MEGA DEAL SECTION */}
-            <div className="container" style={{ marginTop: '-4rem', position: 'relative', zIndex: 10 }}>
-                <MegaDealDisplay />
+            <div className="container" style={{ position: 'relative', zIndex: 10, marginTop: '-2rem', marginBottom: '2rem' }}>
+                <MegaDealDisplay variant="inline" />
             </div>
 
             <section id="products" className={styles.products}>

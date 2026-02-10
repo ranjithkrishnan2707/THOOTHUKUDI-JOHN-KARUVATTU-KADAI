@@ -1,3 +1,4 @@
 {
-  "/(user)/page": "app/(user)/page.js"
+  "/(user)/page": "app/(user)/page.js",
+  "/api/mega-deal/route": "app/api/mega-deal/route.js"
 }

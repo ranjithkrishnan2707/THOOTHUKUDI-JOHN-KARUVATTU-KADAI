@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { Timer, ShoppingBag, Sparkles, X } from 'lucide-react';
+import { Timer, ShoppingBag, Sparkles, X, ChevronRight, Rocket } from 'lucide-react';
 import OrderModal from '@/components/OrderModal/OrderModal';
 import styles from './MegaDealDisplay.module.css';
 
@@ -21,7 +21,11 @@ interface MegaDeal {
     isActive: boolean;
 }
 
-export default function MegaDealDisplay() {
+interface MegaDealDisplayProps {
+    variant?: 'popup' | 'inline';
+}
+
+export default function MegaDealDisplay({ variant = 'popup' }: MegaDealDisplayProps) {
     const [deal, setDeal] = useState<MegaDeal | null>(null);
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [isVisible, setIsVisible] = useState(false);
@@ -33,7 +37,12 @@ export default function MegaDealDisplay() {
                 const data = await res.json();
                 if (data.success && data.data) {
                     setDeal(data.data);
-                    setIsVisible(true);
+                    // Add a small delay for the entrance animation for popup variant
+                    if (variant === 'popup') {
+                        setTimeout(() => setIsVisible(true), 1000);
+                    } else {
+                        setIsVisible(true); // Always visible for inline variant
+                    }
                 }
             } catch (error) {
                 console.error("Failed to fetch mega deal", error);
@@ -41,7 +50,7 @@ export default function MegaDealDisplay() {
         };
 
         fetchDeal();
-    }, []);
+    }, [variant]);
 
     const handleClose = () => {
         setIsVisible(false);
@@ -96,64 +105,65 @@ Phone: ${formData.mobileNumber}`;
     };
 
 
-    if (!deal || !isVisible) return null;
+    if (!deal) return null;
 
     const savings = deal.totalOriginalPrice - deal.offerPrice;
     const savingsPercent = Math.round((savings / deal.totalOriginalPrice) * 100);
 
+    const isInline = variant === 'inline';
+
     return (
-        <div className={styles.container}>
-            {/* Background decorations */}
-            <div className={styles.decoCircle1}></div>
-            <div className={styles.decoCircle2}></div>
+        <div className={styles.containerInline}>
+            {/* Badge */}
+            <div className={styles.limitedBadge}>
+                <Timer size={14} />
+                Limited Time Offer
+            </div>
 
-            <button
-                onClick={handleClose}
-                className={styles.closeButton}
-                aria-label="Close deal"
-            >
-                <X size={20} />
-            </button>
+            {/* Header */}
+            <div className={styles.headerSection}>
+                <div className={styles.titleRow}>
+                    <Rocket size={32} className={styles.rocketIcon} />
+                    <h2 className={styles.mainTitle}>Mega Combo Deal</h2>
+                </div>
+                <p className={styles.subTitle}>Grab this exclusive bundle prepared just for you!</p>
+            </div>
 
-            <div className={styles.contentWrapper}>
-
-                {/* Left: Text & Timer */}
-                <div className={styles.infoSection}>
-                    <div className={styles.badge}>
-                        <Sparkles size={14} />
-                        Live Exclusive Deal
-                    </div>
-                    <h2 className={styles.title}>
-                        Super Combo Offer
-                    </h2>
-                    <p className={styles.description}>
-                        {deal.products.map(p => p.name).join(' + ')}
-                    </p>
-
-                    <div className={styles.priceContainer}>
-                        <div className={styles.priceWrapper}>
-                            <span className={styles.originalPrice}>₹{deal.totalOriginalPrice}</span>
-                            <span className={styles.offerPrice}>₹{deal.offerPrice}</span>
+            {/* Content Split: Products Left, Price Right */}
+            <div className={styles.contentSplit}>
+                {/* 1. Products Grid */}
+                <div className={styles.productsGrid}>
+                    {deal.products.map(product => (
+                        <div key={product._id} className={styles.productCard}>
+                            <img
+                                src={product.image || '/placeholder-product.png'}
+                                alt={product.name}
+                                className={styles.cardImage}
+                                onError={(e) => {
+                                    (e.target as HTMLImageElement).src = 'https://placehold.co/100x100?text=Product';
+                                }}
+                            />
+                            <span className={styles.cardName}>{product.name}</span>
+                            <span className={styles.cardValue}>Value: ₹{product.finalPrice}</span>
                         </div>
-                        <div className={styles.saveBadge}>
-                            SAVE {savingsPercent}%
-                        </div>
-                    </div>
+                    ))}
                 </div>
 
-                {/* Right: Action */}
-                <div className={styles.actionSection}>
+                {/* Divider Line */}
+                <div className={styles.divider}></div>
+
+                {/* 2. Price Card */}
+                <div className={styles.priceCard}>
+                    <span className={styles.originalPrice}>₹{deal.totalOriginalPrice}</span>
+                    <span className={styles.offerPrice}>₹{deal.offerPrice}</span>
+                    <span className={styles.comboPriceLabel}>COMBO PRICE</span>
+
                     <button
                         onClick={handleOrderClick}
-                        className={styles.orderButton}
+                        className={styles.orderBtn}
                     >
-                        <ShoppingBag size={20} />
-                        Grab Deal Now
+                        ORDER NOW
                     </button>
-                    <p className={styles.timerText}>
-                        <Timer size={12} style={{ display: 'inline', marginRight: '4px' }} />
-                        Limited time offer
-                    </p>
                 </div>
             </div>
 

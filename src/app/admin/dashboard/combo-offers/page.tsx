@@ -116,7 +116,7 @@ export default function AdminComboOffers() {
     return (
         <div className={styles.container}>
             <div className={styles.header}>
-                <h1>Combo Offers Manager (DB)</h1>
+                <h1>Combo Offers Manager</h1>
                 <p>Curate and release the single active mega-deal for all customers.</p>
             </div>
 
