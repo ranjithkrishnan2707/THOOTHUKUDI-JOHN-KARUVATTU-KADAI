@@ -10,7 +10,8 @@ import {
     Rocket,
     Package,
     IndianRupee,
-    Tag
+    Tag,
+    Loader2
 } from 'lucide-react';
 
 export default function AdminComboOffers() {
@@ -19,10 +20,11 @@ export default function AdminComboOffers() {
     const [offerPrice, setOfferPrice] = useState<string>('');
     const [activeOffer, setActiveOffer] = useState<any>(null);
     const [searchTerm, setSearchTerm] = useState('');
+    const [loading, setLoading] = useState(false);
 
     // Load products and active offer on mount
     useEffect(() => {
-        // Load Products
+        // Load Products (Simulated from existing logic)
         const savedProducts = localStorage.getItem('jk_products');
         if (savedProducts) {
             setAllProducts(JSON.parse(savedProducts));
@@ -30,12 +32,20 @@ export default function AdminComboOffers() {
             setAllProducts(INITIAL_PRODUCTS);
         }
 
-        // Load Active Offer
-        const savedOffer = localStorage.getItem('jk_active_combo_v2');
-        if (savedOffer) {
-            setActiveOffer(JSON.parse(savedOffer));
-        }
+        fetchActiveOffer();
     }, []);
+
+    const fetchActiveOffer = async () => {
+        try {
+            const res = await fetch('/api/mega-deal');
+            const data = await res.json();
+            if (data.success && data.data) {
+                setActiveOffer(data.data);
+            }
+        } catch (error) {
+            console.error('Failed to fetch active offer:', error);
+        }
+    };
 
     const toggleProduct = (product: any) => {
         const isSelected = selectedProducts.find(p => p._id === product._id);
@@ -54,39 +64,48 @@ export default function AdminComboOffers() {
     const offerPriceNum = Number(offerPrice);
     const isValid = selectedProducts.length > 0 && offerPriceNum > 0 && offerPriceNum < totalOriginalPrice;
 
-    const handleReleaseOffer = () => {
+    const handleReleaseOffer = async () => {
         if (!isValid) return;
+        setLoading(true);
 
-        // Strip heavy data (images/descriptions) to prevent localStorage quota errors
-        const sanitizedProducts = selectedProducts.map(({ _id, name, finalPrice, category, hsnCode }) => ({
-            _id,
-            name,
-            finalPrice,
-            category,
-            hsnCode
-        }));
-
-        const newOffer = {
-            id: Date.now().toString(),
-            products: sanitizedProducts,
+        const newOfferPayload = {
+            products: selectedProducts.map(({ _id, name, finalPrice, category, hsnCode, image }) => ({
+                _id,
+                name,
+                finalPrice,
+                category,
+                hsnCode,
+                image // Keep image URL if possible
+            })),
             totalOriginalPrice,
             offerPrice: offerPriceNum,
-            createdAt: new Date().toISOString(),
-            status: 'ACTIVE'
         };
 
         try {
-            localStorage.setItem('jk_active_combo_v2', JSON.stringify(newOffer));
-            setActiveOffer(newOffer);
+            const res = await fetch('/api/mega-deal', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(newOfferPayload),
+            });
 
-            // Reset form
-            setSelectedProducts([]);
-            setOfferPrice('');
+            const data = await res.json();
 
-            alert('New Combo Offer Released Successfully!');
+            if (data.success) {
+                setActiveOffer(data.data);
+                // Reset form
+                setSelectedProducts([]);
+                setOfferPrice('');
+                alert('New Mega Combo Deal Released to All Devices! 🚀');
+            } else {
+                throw new Error(data.error || 'Failed to release offer');
+            }
         } catch (error) {
-            console.error('Storage Error:', error);
-            alert('Error: Local storage is full. Please reset your browser cache or remove some custom products.');
+            console.error('API Error:', error);
+            alert('Error releasing offer. Please try again.');
+        } finally {
+            setLoading(false);
         }
     };
 
@@ -97,8 +116,8 @@ export default function AdminComboOffers() {
     return (
         <div className={styles.container}>
             <div className={styles.header}>
-                <h1>Combo Offers Manager</h1>
-                <p>Curate and release the single active mega-deal for your customers.</p>
+                <h1>Combo Offers Manager (DB)</h1>
+                <p>Curate and release the single active mega-deal for all customers.</p>
             </div>
 
             {activeOffer && (
@@ -211,11 +230,11 @@ export default function AdminComboOffers() {
 
                         <button
                             className={styles.releaseBtn}
-                            disabled={!isValid}
+                            disabled={!isValid || loading}
                             onClick={handleReleaseOffer}
                         >
-                            <Rocket size={20} />
-                            Release New Combo Offer
+                            {loading ? <Loader2 className="animate-spin" size={20} /> : <Rocket size={20} />}
+                            {loading ? 'Releasing...' : 'Release New Combo Offer'}
                         </button>
                     </div>
                 </div>
